@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Kintai2Activity">
+
+    <Button
+        android:id="@+id/configButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:onClick="onClickConfBtn"
+        android:text="設定"
+        app:layout_constraintBottom_toBottomOf="@+id/checkBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/checkBtn"
+        app:layout_constraintTop_toTopOf="@+id/checkBtn" />
+
+    <TextClock
+        android:id="@+id/clockDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:format12Hour="yyyy/MM/dd"
+        android:format24Hour="yyyy/MM/dd"
+        android:textSize="20sp"
+        android:timeZone="Asia/Tokyo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextClock
+        android:id="@+id/clockTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:format12Hour="hh:mm:ss"
+        android:format24Hour="HH:mm:ss"
+        android:textSize="50sp"
+        android:timeZone="GMT+900"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/clockDate" />
+
+    <Button
+        android:id="@+id/clockOnBtn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:text="出勤"
+        app:layout_constraintBottom_toTopOf="@id/breakBtn"
+        app:layout_constraintEnd_toStartOf="@+id/clockOutBtn"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/clockOutBtn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
+        android:text="退勤"
+        app:layout_constraintBottom_toBottomOf="@+id/clockOnBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/clockOnBtn"
+        app:layout_constraintTop_toTopOf="@+id/clockOnBtn" />
+
+    <Button
+        android:id="@+id/homeBtn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="ホーム"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/checkBtn"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/breakBtn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginBottom="30dp"
+        android:text="休憩"
+        app:layout_constraintBottom_toTopOf="@+id/homeBtn"
+        app:layout_constraintEnd_toStartOf="@+id/returmBtn"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/returmBtn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
+        android:text="戻り"
+        app:layout_constraintBottom_toBottomOf="@id/breakBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@id/breakBtn"
+        app:layout_constraintTop_toTopOf="@id/breakBtn" />
+
+    <EditText
+        android:id="@+id/dateIn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:cursorVisible="false"
+        android:ems="10"
+        android:inputType="date"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/startDay" />
+
+    <EditText
+        android:id="@+id/dateOut"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:inputType="date"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="@+id/dateIn"
+        app:layout_constraintStart_toStartOf="@+id/dateIn"
+        app:layout_constraintTop_toBottomOf="@+id/dateIn" />
+
+    <Button
+        android:id="@+id/checkBtn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:onClick="onClickCheckBtn"
+        android:text="確認"
+        app:layout_constraintBottom_toBottomOf="@+id/homeBtn"
+        app:layout_constraintEnd_toStartOf="@+id/configButton"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/homeBtn"
+        app:layout_constraintTop_toTopOf="@+id/homeBtn" />
+
+    <EditText
+        android:id="@+id/startDay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:inputType="date"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/clockTime" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
